@@ -1,0 +1,426 @@
+/* ===========================
+   Kieran Althaus - Personal Site
+   Custom styles on terminal.css
+   =========================== */
+
+:root {
+  --color-red: #D64045;
+  --color-blue: #1D3557;
+  --color-yellow: #E9C46A;
+  --color-text: #2b2b2b;
+  --color-bg: #fafafa;
+  --color-muted: #6b7280;
+}
+
+/* Base */
+body.terminal {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* Header */
+header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid var(--color-blue);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.site-title {
+  font-size: 2rem;
+  margin-bottom: 0.15rem;
+  letter-spacing: -0.5px;
+}
+
+.home-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-link:hover {
+  color: var(--color-blue);
+}
+
+.subtitle {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* Profile photo */
+.header-photo {
+  flex-shrink: 0;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-yellow);
+  box-shadow: 0 0 0 3px var(--color-bg), 0 0 0 6px var(--color-blue);
+}
+
+/* Navigation */
+nav ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0.75rem 0 0 !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0;
+}
+
+nav li {
+  display: inline-flex !important;
+  align-items: center;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+nav .sep {
+  color: var(--color-yellow);
+  font-weight: bold;
+  padding: 0 0.65rem;
+  user-select: none;
+}
+
+nav a {
+  color: var(--color-blue);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.15rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  border-bottom-color: var(--color-red);
+  color: var(--color-red);
+}
+
+/* Links */
+a {
+  color: var(--color-blue);
+  transition: color 0.15s;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-red);
+}
+
+/* Section headings with colored accent bar */
+.section-heading {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.accent-bar {
+  display: inline-block;
+  width: 4px;
+  height: 1.3em;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.accent-bar--red { background-color: var(--color-red); }
+.accent-bar--blue { background-color: var(--color-blue); }
+.accent-bar--yellow { background-color: var(--color-yellow); }
+
+/* Sections */
+section {
+  margin-bottom: 2rem;
+}
+
+section h3 {
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+/* Dividers with color accents */
+hr.divider {
+  border: none;
+  height: 2px;
+  margin: 2rem 0;
+}
+
+hr.divider--red { background-color: var(--color-red); }
+hr.divider--blue { background-color: var(--color-blue); }
+hr.divider--yellow { background-color: var(--color-yellow); }
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.5rem;
+}
+
+table td {
+  padding: 0.4rem 0;
+  vertical-align: top;
+  border: none;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+table tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+table tr:last-child {
+  border-bottom: none;
+}
+
+td.year {
+  width: 110px;
+  white-space: nowrap;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  padding-right: 1rem;
+}
+
+/* Publications */
+.pub-list {
+  margin-bottom: 1rem;
+}
+
+.pub {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pub:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pub-text {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 0.4rem;
+}
+
+.pub-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.pub-btn {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.2rem 0.7rem;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+button.pub-btn {
+  color: var(--color-blue);
+  background-color: transparent;
+  border: 2px solid var(--color-blue);
+}
+
+button.pub-btn:hover,
+button.pub-btn:focus {
+  background-color: var(--color-blue);
+  color: #fff;
+}
+
+a.pub-btn {
+  color: #fff;
+  background-color: var(--color-red);
+  border: 2px solid var(--color-red);
+}
+
+a.pub-btn:hover,
+a.pub-btn:focus {
+  background-color: #b8333a;
+  border-color: #b8333a;
+  color: #fff;
+}
+
+/* BibTeX dropdown */
+.pub-bib {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.pub-bib.open {
+  max-height: 500px;
+}
+
+.bib-wrap {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.bib-copy {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--color-muted);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+  z-index: 1;
+}
+
+.bib-copy:hover {
+  background-color: var(--color-blue);
+  border-color: var(--color-blue);
+  color: #fff;
+}
+
+.pub-bib pre {
+  background-color: #f0f0f0;
+  border-left: 3px solid var(--color-yellow);
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Newsletter section */
+.newsletter-box {
+  background: linear-gradient(135deg, var(--color-blue) 0%, #264b7a 100%);
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 6px;
+  border-left: 5px solid var(--color-yellow);
+}
+
+.newsletter-box p {
+  color: #dce4ef;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.btn--subscribe {
+  display: inline-block;
+  background-color: var(--color-red);
+  color: #fff;
+  padding: 0.55rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.3px;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.btn--subscribe:hover,
+.btn--subscribe:focus {
+  background-color: #b8333a;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Contact line */
+.contact-line {
+  margin-top: 0.75rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+}
+
+footer p {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+footer a {
+  color: var(--color-blue);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  .header-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .site-title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    margin-bottom: 0;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  td.year {
+    width: 90px;
+    font-size: 0.82rem;
+  }
+
+  table td {
+    font-size: 0.87rem;
+  }
+
+  .newsletter-box {
+    padding: 1.25rem 1.25rem;
+  }
+}
