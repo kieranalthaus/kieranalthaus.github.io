@@ -29,29 +29,8 @@
         <h2 class="section-heading"><span class="accent-bar accent-bar--blue"></span>Photos</h2>
         <p class="gallery-intro">Snapshots from the field, the lab, and everything in between.</p>
 
-        <div class="gallery-grid">
-
-          <div class="gallery-item" onclick="openLightbox(this)">
-            <img src="photos/93B2B2DE-A61F-47FE-B36E-F89BC4BB3D85_1_105_c.jpeg" alt="Kieran Althaus" loading="lazy">
-            <div class="gallery-overlay">
-              <span class="gallery-caption">Kieran Althaus</span>
-            </div>
-          </div>
-
-          <div class="gallery-item" onclick="openLightbox(this)">
-            <img src="photos/citations.jpeg" alt="Citations" loading="lazy">
-            <div class="gallery-overlay">
-              <span class="gallery-caption">Citations</span>
-            </div>
-          </div>
-
-          <!--
-            To add more photos:
-            1. Drop image files into the photos/ folder
-            2. Copy a gallery-item block below
-            3. Update src, alt, and caption text
-          -->
-
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Photos are loaded automatically from photos/photos.json -->
         </div>
       </section>
     </main>
@@ -77,6 +56,24 @@
   <script>
     var currentIndex = 0;
     var items = [];
+
+    // Load gallery from photos.json
+    fetch('photos/photos.json')
+      .then(function(res) { return res.json(); })
+      .then(function(photos) {
+        var grid = document.getElementById('gallery-grid');
+        photos.forEach(function(photo) {
+          var item = document.createElement('div');
+          item.className = 'gallery-item';
+          item.onclick = function() { openLightbox(item); };
+          item.innerHTML =
+            '<img src="photos/' + photo.file + '" alt="' + photo.caption + '" loading="lazy">' +
+            '<div class="gallery-overlay">' +
+              '<span class="gallery-caption">' + photo.caption + '</span>' +
+            '</div>';
+          grid.appendChild(item);
+        });
+      });
 
     function getItems() {
       items = document.querySelectorAll('.gallery-item');
