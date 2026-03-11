@@ -33,15 +33,24 @@
 
           <div class="gallery-item" onclick="openLightbox(this)">
             <img src="photos/93B2B2DE-A61F-47FE-B36E-F89BC4BB3D85_1_105_c.jpeg" alt="Kieran Althaus" loading="lazy">
-            <div class="gallery-caption">Kieran Althaus</div>
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Kieran Althaus</span>
+            </div>
           </div>
 
           <div class="gallery-item" onclick="openLightbox(this)">
             <img src="photos/citations.jpeg" alt="Citations" loading="lazy">
-            <div class="gallery-caption">Citations</div>
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Citations</span>
+            </div>
           </div>
 
-          <!-- Add more photos: copy a gallery-item block, update src, alt, and caption -->
+          <!--
+            To add more photos:
+            1. Drop image files into the photos/ folder
+            2. Copy a gallery-item block below
+            3. Update src, alt, and caption text
+          -->
 
         </div>
       </section>
@@ -49,7 +58,7 @@
 
     <footer>
       <hr class="divider divider--yellow">
-      <p>&copy; 2026 Kieran Althaus &middot; <a href="mailto:kalthaus@uchicago.edu">kalthaus@uchicago.edu</a> &middot; <a href="index.html">Home</a></p>
+      <p>&copy; 2026 Kieran Althaus &middot; kalthaus [at] uchicago [dot] edu &middot; <a href="index.html">Home</a></p>
     </footer>
 
   </div>
@@ -82,9 +91,10 @@
     }
 
     function closeLightbox(e) {
-      if (e.target === document.getElementById('lightbox') ||
-          e.target.classList.contains('lightbox-close')) {
-        document.getElementById('lightbox').classList.remove('active');
+      var lb = document.getElementById('lightbox');
+      if (e.target === lb || e.target.classList.contains('lightbox-close') ||
+          e.target === document.querySelector('.lightbox-content')) {
+        lb.classList.remove('active');
         document.body.style.overflow = '';
       }
     }
