@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photos — Kieran Althaus</title>
+  <meta name="description" content="Photos from research, fieldwork, and collaborators — Kieran Althaus.">
+  <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="terminal">
+  <div class="container">
+
+    <header>
+      <h1 class="site-title"><a href="index.html" class="home-link">Kieran Althaus</a></h1>
+      <p class="subtitle">Photos</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">home</a></li><li><span class="sep">/</span></li>
+          <li><a href="index.html#publications">publications</a></li><li><span class="sep">/</span></li>
+          <li><a href="cv.html">cv</a></li><li><span class="sep">/</span></li>
+          <li><a href="https://scholar.google.com/citations?user=tFQrWsoAAAAJ&hl=en" target="_blank" rel="noopener">google scholar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2 class="section-heading"><span class="accent-bar accent-bar--blue"></span>Photos</h2>
+        <p class="gallery-intro">Snapshots from the field, the lab, and everything in between.</p>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item" onclick="openLightbox(this)">
+            <img src="photos/93B2B2DE-A61F-47FE-B36E-F89BC4BB3D85_1_105_c.jpeg" alt="Kieran Althaus" loading="lazy">
+            <div class="gallery-caption">Kieran Althaus</div>
+          </div>
+
+          <div class="gallery-item" onclick="openLightbox(this)">
+            <img src="photos/citations.jpeg" alt="Citations" loading="lazy">
+            <div class="gallery-caption">Citations</div>
+          </div>
+
+          <!-- Add more photos: copy a gallery-item block, update src, alt, and caption -->
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <hr class="divider divider--yellow">
+      <p>&copy; 2026 Kieran Althaus &middot; <a href="mailto:kalthaus@uchicago.edu">kalthaus@uchicago.edu</a> &middot; <a href="index.html">Home</a></p>
+    </footer>
+
+  </div>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" onclick="navigateLightbox(event, -1)" aria-label="Previous">&lsaquo;</button>
+    <button class="lightbox-next" onclick="navigateLightbox(event, 1)" aria-label="Next">&rsaquo;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="">
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script>
+    var currentIndex = 0;
+    var items = [];
+
+    function getItems() {
+      items = document.querySelectorAll('.gallery-item');
+    }
+
+    function openLightbox(el) {
+      getItems();
+      currentIndex = Array.prototype.indexOf.call(items, el);
+      showImage();
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e.target === document.getElementById('lightbox') ||
+          e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateLightbox(e, dir) {
+      e.stopPropagation();
+      getItems();
+      currentIndex = (currentIndex + dir + items.length) % items.length;
+      showImage();
+    }
+
+    function showImage() {
+      var img = items[currentIndex].querySelector('img');
+      var caption = items[currentIndex].querySelector('.gallery-caption');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      document.getElementById('lightbox-caption').textContent =
+        caption ? caption.textContent : '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      var lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') {
+        lb.classList.remove('active');
+        document.body.style.overflow = '';
+      } else if (e.key === 'ArrowLeft') {
+        navigateLightbox(e, -1);
+      } else if (e.key === 'ArrowRight') {
+        navigateLightbox(e, 1);
+      }
+    });
+  </script>
+</body>
+</html>

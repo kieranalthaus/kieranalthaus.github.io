@@ -7,24 +7,35 @@
   <meta name="description" content="Curriculum vitae of Kieran Althaus, Ph.D Candidate in Evolutionary Biology at the University of Chicago.">
   <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cv-print.css" media="print">
 </head>
 <body class="terminal">
-  <div class="container">
+  <div class="container cv-page">
 
-    <header>
+    <header class="cv-header">
       <h1 class="site-title"><a href="index.html" class="home-link">Kieran Althaus</a></h1>
       <p class="subtitle">Curriculum Vitae</p>
-      <nav>
+      <nav class="screen-only">
         <ul>
           <li><a href="index.html">home</a></li><li><span class="sep">/</span></li>
+          <li><a href="photos.html">photos</a></li><li><span class="sep">/</span></li>
           <li><a href="#education">education</a></li><li><span class="sep">/</span></li>
+          <li><a href="#publications">publications</a></li><li><span class="sep">/</span></li>
           <li><a href="#presentations">presentations</a></li><li><span class="sep">/</span></li>
           <li><a href="#awards">awards</a></li><li><span class="sep">/</span></li>
           <li><a href="#teaching">teaching</a></li><li><span class="sep">/</span></li>
-          <li><a href="#service">service</a></li><li><span class="sep">/</span></li>
-          <li><a href="CV/2024_CV.pdf" target="_blank">download pdf</a></li>
+          <li><a href="#service">service</a></li>
         </ul>
       </nav>
+      <div class="cv-actions screen-only">
+        <a href="CV/2024_CV.pdf" target="_blank" class="cv-download-btn">Download PDF</a>
+        <button onclick="window.print()" class="cv-download-btn cv-download-btn--outline">Print</button>
+      </div>
+      <!-- Print-only contact block -->
+      <div class="print-only print-contact">
+        <p>Ph.D Candidate &middot; Committee on Evolutionary Biology &middot; University of Chicago</p>
+        <p>kalthaus@uchicago.edu &middot; (310) 910-3518</p>
+      </div>
     </header>
 
     <main>
@@ -52,9 +63,51 @@
 
       <hr class="divider divider--red">
 
+      <!-- PUBLICATIONS -->
+      <section id="publications">
+        <h2 class="section-heading"><span class="accent-bar accent-bar--yellow"></span>Publications</h2>
+
+        <h3>Published</h3>
+        <ol class="cv-pub-list" reversed>
+          <li>
+            <strong>Althaus, K.</strong> and Hipp, A. Simulating the pathway from life history to phylogeny. <em>New Phytologist</em>. [Commentary]. (2026).
+          </li>
+          <li>
+            Love NL, <strong>Althaus K</strong>, Esperon-Rodriguez M, Ossola A, Johns J, Pawlak C, Igi&cacute; B, Ritter M, Yost J. Genetic diversity in urban forests and their potential role in conserving the world&rsquo;s threatened tree species. <em>Annals of Botany</em>. 2025.
+          </li>
+          <li>
+            Ribicoff G, Garner M, Pham K, <strong>Althaus KN</strong>, Cavender-Bares J, Crowl A, Gray S, Gugger P, Hahn M, Liao S, Manos P, Mohn R, Pearse I, Steichmann N, Tuffin A, Wittere A, and Hipp AL. Introgression, phytogeography, and genomic species cohesion in the eastern North American white oak syngameon. <em>Molecular Ecology</em>. 2025.
+          </li>
+          <li>
+            <strong>Althaus KN</strong>, Nessen K, Yost JM, Grossenbacher DL, and Ritter MK. Quantifying research effort for California&rsquo;s flora: evidence of bias against rare plants in literature and sequence data. <em>Madro&ntilde;o</em> 72(2). 2025.
+          </li>
+          <li>
+            <strong>Althaus KN</strong>, Gonz&aacute;lez-Elizondo MS, Gonz&aacute;lez-Rodr&iacute;guez A, Rodr&iacute;guez Correa H, and Hipp AL. Phylogenetic niche conservatism drives floristic assembly across Mexico&rsquo;s temperate-tropical divide. <em>Global Ecology and Biogeography</em> 34(4): e70017. 2025.
+          </li>
+          <li>
+            Hipp AL, <strong>Althaus KN</strong>, Coombs AJ, Gonz&aacute;lez-Elizondo SM, Gonz&aacute;lez-Rodr&iacute;guez A, Hahn M, Manos P, Rodr&iacute;guez Correa H. Time, space, function: biogeography of the Mexican oaks. <em>International Oaks</em> 34: 125&ndash;139. 2023.
+          </li>
+          <li>
+            <strong>Althaus KN</strong> and Love NLR. California desert plants: book review. <em>Madro&ntilde;o</em> 69(2): 202. 2022.
+          </li>
+        </ol>
+
+        <h3>Submitted</h3>
+        <ol class="cv-pub-list">
+          <li>
+            Loza-Rivera MI, <strong>Althaus KN</strong>, Good K, Byrne A, Cannon CH, and Alvarez-Clare S. Prioritizing conservation areas for the genus <em>Quercus</em> (Fagaceae) in Mexico using species distribution modeling and a multi-criteria analysis. <em>Global Ecology and Conservation</em>. (2026).
+          </li>
+          <li>
+            <strong>Althaus KN</strong>, Coombs AJ, Gonz&aacute;lez-Elizondo SM, Gonz&aacute;lez-Rodr&iacute;guez A, Hahn M, Manos P, Rodr&iacute;guez Correa H, and Hipp AL. Timing and origins of Mexican and Central American oak diversity. <em>PNAS</em>. (2026).
+          </li>
+        </ol>
+      </section>
+
+      <hr class="divider divider--blue">
+
       <!-- PRESENTATIONS -->
       <section id="presentations">
-        <h2 class="section-heading"><span class="accent-bar accent-bar--yellow"></span>Presentations</h2>
+        <h2 class="section-heading"><span class="accent-bar accent-bar--red"></span>Presentations</h2>
 
         <h3>Invited</h3>
         <table>
@@ -121,31 +174,31 @@
         </table>
       </section>
 
-      <hr class="divider divider--blue">
+      <hr class="divider divider--yellow">
 
       <!-- AWARDS -->
       <section id="awards">
-        <h2 class="section-heading"><span class="accent-bar accent-bar--red"></span>Awards</h2>
+        <h2 class="section-heading"><span class="accent-bar accent-bar--blue"></span>Awards &amp; Grants</h2>
 
         <h3>Grants</h3>
         <table>
           <tbody>
             <tr>
               <td class="year">2025</td>
-              <td>Torrey Botanical Society Graduate Student Research Fellowship ($2,500)</td>
+              <td>Torrey Botanical Society Graduate Student Research Fellowship <span class="amount">$2,500</span></td>
             </tr>
             <tr>
               <td class="year">2025</td>
-              <td>Grainger Bioinformatics Center ($4,639)</td>
+              <td>Grainger Bioinformatics Center <span class="amount">$4,639</span></td>
             </tr>
             <tr>
               <td class="year">2025</td>
-              <td>Pritzker Laboratory Graduate Student Grant ($2,384)</td>
+              <td>Pritzker Laboratory Graduate Student Grant <span class="amount">$2,384</span></td>
             </tr>
           </tbody>
         </table>
 
-        <h3>Conference Awards</h3>
+        <h3>Honors</h3>
         <table>
           <tbody>
             <tr>
@@ -156,22 +209,22 @@
         </table>
       </section>
 
-      <hr class="divider divider--yellow">
+      <hr class="divider divider--red">
 
       <!-- TEACHING -->
       <section id="teaching">
-        <h2 class="section-heading"><span class="accent-bar accent-bar--blue"></span>Teaching</h2>
+        <h2 class="section-heading"><span class="accent-bar accent-bar--yellow"></span>Teaching</h2>
 
         <h3>University of Chicago</h3>
         <table>
           <tbody>
             <tr>
               <td class="year">2025</td>
-              <td>BIOS 20153 &mdash; Lab Instructor, Fundamentals of Ecology and Evolutionary Biology</td>
+              <td><strong>Lab Instructor</strong> &mdash; BIOS 20153, Fundamentals of Ecology and Evolutionary Biology</td>
             </tr>
             <tr>
               <td class="year">2024</td>
-              <td>BIOS 13123 &mdash; Teaching Assistant, Biological Evolution</td>
+              <td><strong>Teaching Assistant</strong> &mdash; BIOS 13123, Biological Evolution</td>
             </tr>
           </tbody>
         </table>
@@ -181,46 +234,46 @@
           <tbody>
             <tr>
               <td class="year">2022</td>
-              <td>BOT 313 &mdash; Lab Instructor, Taxonomy of Vascular Plants</td>
+              <td><strong>Lab Instructor</strong> &mdash; BOT 313, Taxonomy of Vascular Plants</td>
             </tr>
             <tr>
               <td class="year">2021</td>
-              <td>BIO 160 &mdash; Lab Instructor, Introduction to the Diversity of Life</td>
+              <td><strong>Lab Instructor</strong> &mdash; BIO 160, Introduction to the Diversity of Life</td>
             </tr>
             <tr>
-              <td class="year">2020&ndash;2021</td>
-              <td>BOT 121 &mdash; Lab Instructor, General Botany</td>
+              <td class="year">2020 &ndash; 2021</td>
+              <td><strong>Lab Instructor</strong> &mdash; BOT 121, General Botany</td>
             </tr>
             <tr>
-              <td class="year">2019&ndash;2022</td>
-              <td>BOT 433 &mdash; Teaching Assistant, Field Botany: California Plant Diversity</td>
+              <td class="year">2019 &ndash; 2022</td>
+              <td><strong>Teaching Assistant</strong> &mdash; BOT 433, Field Botany: California Plant Diversity</td>
             </tr>
             <tr>
-              <td class="year">2019&ndash;2021</td>
-              <td>BOT 313 &mdash; Teaching Assistant, Taxonomy of Vascular Plants</td>
+              <td class="year">2019 &ndash; 2021</td>
+              <td><strong>Teaching Assistant</strong> &mdash; BOT 313, Taxonomy of Vascular Plants</td>
             </tr>
           </tbody>
         </table>
       </section>
 
-      <hr class="divider divider--red">
+      <hr class="divider divider--blue">
 
       <!-- SERVICE & OUTREACH -->
       <section id="service">
-        <h2 class="section-heading"><span class="accent-bar accent-bar--yellow"></span>Service &amp; Outreach</h2>
+        <h2 class="section-heading"><span class="accent-bar accent-bar--red"></span>Service &amp; Outreach</h2>
 
         <h3>Peer Review</h3>
-        <p>Ecology and Evolution, Madro&ntilde;o, Diversity, American Journal of Botany, Annals of Botany</p>
+        <p class="cv-inline">Ecology and Evolution &middot; Madro&ntilde;o &middot; Diversity &middot; American Journal of Botany &middot; Annals of Botany</p>
 
         <h3>Outreach</h3>
         <table>
           <tbody>
             <tr>
-              <td class="year">2024&ndash;2025</td>
+              <td class="year">2024 &ndash; 2025</td>
               <td>Field Museum&rsquo;s annual Member&rsquo;s Night</td>
             </tr>
             <tr>
-              <td class="year">2024&ndash;2025</td>
+              <td class="year">2024 &ndash; 2025</td>
               <td>Student organizer, Chicago Plant Science Symposium</td>
             </tr>
           </tbody>
@@ -240,7 +293,7 @@
     </main>
 
     <footer>
-      <hr class="divider divider--blue">
+      <hr class="divider divider--yellow">
       <p>&copy; 2026 Kieran Althaus &middot; <a href="mailto:kalthaus@uchicago.edu">kalthaus@uchicago.edu</a> &middot; <a href="index.html">Home</a></p>
     </footer>
 

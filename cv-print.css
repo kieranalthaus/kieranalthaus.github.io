@@ -1,0 +1,181 @@
+/* ===========================
+   CV Print Styles
+   Use browser Print > Save as PDF
+   for a clean, minimal CV export
+   =========================== */
+
+@page {
+  size: letter;
+  margin: 0.75in 0.85in;
+}
+
+body.terminal {
+  font-size: 10.5pt;
+  line-height: 1.45;
+  color: #000;
+  background: #fff;
+}
+
+.container.cv-page {
+  max-width: none;
+  padding: 0;
+}
+
+/* Print-only contact info */
+.print-only {
+  display: block !important;
+}
+
+.print-contact {
+  margin-top: 0.15in;
+  font-size: 9.5pt;
+  color: #444;
+}
+
+.print-contact p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Hide screen-only elements */
+.screen-only {
+  display: none !important;
+}
+
+/* Header */
+.cv-header {
+  border-bottom: 1.5pt solid #1D3557;
+  padding-bottom: 0.12in;
+  margin-bottom: 0.2in;
+}
+
+.site-title {
+  font-size: 18pt;
+  margin-bottom: 0;
+}
+
+.home-link {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+.subtitle {
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 1.5pt;
+  color: #666;
+  margin-top: 0.02in;
+}
+
+/* Section headings */
+.section-heading {
+  font-size: 11.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  border-bottom: 0.5pt solid #ccc;
+  padding-bottom: 0.04in;
+  margin-bottom: 0.1in;
+  margin-top: 0.18in;
+  page-break-after: avoid;
+}
+
+.accent-bar {
+  display: none;
+}
+
+/* Subheadings */
+section h3 {
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.5pt;
+  color: #555;
+  margin-top: 0.1in;
+  margin-bottom: 0.04in;
+  page-break-after: avoid;
+}
+
+/* Dividers — hide in print */
+hr.divider {
+  display: none;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.05in;
+}
+
+table td {
+  padding: 0.025in 0;
+  font-size: 10pt;
+  line-height: 1.4;
+  border: none;
+  vertical-align: top;
+}
+
+table tr {
+  border-bottom: none;
+}
+
+td.year {
+  width: 0.95in;
+  color: #555;
+  font-size: 9pt;
+  padding-right: 0.12in;
+}
+
+/* Publication list */
+.cv-pub-list {
+  padding-left: 0.25in;
+  margin: 0.04in 0 0.08in;
+}
+
+.cv-pub-list li {
+  font-size: 10pt;
+  line-height: 1.4;
+  margin-bottom: 0.06in;
+  padding-left: 0.04in;
+}
+
+/* Grant amounts */
+.amount {
+  color: #555;
+}
+
+/* Inline text */
+.cv-inline {
+  font-size: 10pt;
+  line-height: 1.4;
+}
+
+/* Links in print */
+a {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+/* Footer — hide in print */
+footer {
+  display: none;
+}
+
+/* Prevent awkward page breaks */
+section {
+  page-break-inside: avoid;
+}
+
+table tr {
+  page-break-inside: avoid;
+}
+
+/* Allow long sections to break */
+#presentations,
+#publications {
+  page-break-inside: auto;
+}
+
+#presentations table tr,
+#publications .cv-pub-list li {
+  page-break-inside: avoid;
+}

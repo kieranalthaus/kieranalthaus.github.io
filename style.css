@@ -382,6 +382,223 @@ footer a {
   color: var(--color-blue);
 }
 
+/* CV Page */
+.cv-page .cv-header {
+  margin-bottom: 2rem;
+}
+
+.cv-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.cv-download-btn {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.35rem 1rem;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1.4;
+  color: #fff;
+  background-color: var(--color-blue);
+  border: 2px solid var(--color-blue);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.cv-download-btn:hover,
+.cv-download-btn:focus {
+  background-color: var(--color-red);
+  border-color: var(--color-red);
+  color: #fff;
+}
+
+.cv-download-btn--outline {
+  color: var(--color-blue);
+  background-color: transparent;
+}
+
+.cv-download-btn--outline:hover,
+.cv-download-btn--outline:focus {
+  color: #fff;
+}
+
+.cv-pub-list {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.cv-pub-list li {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 0.65rem;
+  padding-left: 0.25rem;
+}
+
+.cv-pub-list li:last-child {
+  margin-bottom: 0;
+}
+
+.cv-inline {
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.amount {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.print-only {
+  display: none;
+}
+
+.screen-only {
+  display: block;
+}
+
+nav.screen-only {
+  display: block;
+}
+
+/* Photo Gallery */
+.gallery-intro {
+  font-size: 0.92rem;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 1;
+  background: #e5e7eb;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.85);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 0.6rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.65));
+  color: #fff;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 88vh;
+  text-align: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.5);
+}
+
+.lightbox-caption {
+  color: #ccc;
+  font-size: 0.88rem;
+  margin-top: 0.75rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  z-index: 1001;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  z-index: 1001;
+  line-height: 1;
+}
+
+.lightbox-prev { left: 1rem; }
+.lightbox-next { right: 1rem; }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: 1;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .container {
@@ -422,5 +639,20 @@ footer a {
 
   .newsletter-box {
     padding: 1.25rem 1.25rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .gallery-caption {
+    opacity: 1;
+    font-size: 0.72rem;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    font-size: 2rem;
   }
 }
