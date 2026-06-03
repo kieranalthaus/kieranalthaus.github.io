@@ -7,21 +7,28 @@
   --color-red: #D64045;
   --color-blue: #1D3557;
   --color-yellow: #E9C46A;
-  --color-text: #2b2b2b;
-  --color-bg: #fafafa;
-  --color-muted: #6b7280;
+  --color-text: #000000;
+  --color-bg: #FAFAFA;
+  --color-muted: #6B7280;
+  --font-size: 15.5px;
+  --line-height: 1.25;
+  --title-size: 2rem;
+  --title-spacing: -0.6px;
+  --container-width: 910px;
 }
+
 
 /* Base */
 body.terminal {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-size: 15px;
-  line-height: 1.7;
+  font-family: var(--font-family, var(--mono-font-stack));
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .container {
-  max-width: 740px;
+  max-width: var(--container-width);
   margin: 0 auto;
   padding: 2rem 1.5rem 3rem;
 }
@@ -45,9 +52,9 @@ header {
 }
 
 .site-title {
-  font-size: 2rem;
+  font-size: var(--title-size);
   margin-bottom: 0.15rem;
-  letter-spacing: -0.5px;
+  letter-spacing: var(--title-spacing);
 }
 
 .home-link {
